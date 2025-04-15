@@ -12,6 +12,9 @@ import Mobile from './components/Mobile/Mobile.jsx';
 import Laptops from './components/Laptops/Laptops.jsx';
 import Users from './components/Users/Users.jsx';
 import Users2 from './components/User2/Users2.jsx';
+import UserData from './components/UserData/UserData.jsx';
+import Posts from './components/Posts/Posts.jsx';
+import PostDetails from './components/PostDetails/PostDetails.jsx';
 
 const users2Promise = fetch('https://jsonplaceholder.typicode.com/users').then(res => res.json());
 
@@ -32,6 +35,21 @@ const router = createBrowserRouter([
         element: <Suspense fallback={<h3>Loading...</h3>}>
             <Users2 users2Promise={users2Promise}></Users2>
         </Suspense>
+      },
+      {
+        path:'Users/:UserID',
+        loader: ({params}) => fetch(`https://jsonplaceholder.typicode.com/users/${params.UserID}`),
+        Component:UserData
+      },
+      {
+        path:'Posts',
+        loader:() => fetch('https://jsonplaceholder.typicode.com/posts'),
+        Component:Posts
+      },
+      {
+        path:'Posts/:postId',
+        loader: ({params}) => fetch(`https://jsonplaceholder.typicode.com/posts/${params.postId}`),
+        Component:PostDetails
       }
     ]
   },

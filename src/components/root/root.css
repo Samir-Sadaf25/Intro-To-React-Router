@@ -1,0 +1,7 @@
+.root-main{
+    display: flex;
+    gap: 30px;
+}
+nav a.active{
+    text-decoration: underline;
+}

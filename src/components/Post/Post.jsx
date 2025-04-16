@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useNavigate, useParams } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 
 const Post = ({post}) => {
     const {id,title} = post;
@@ -8,7 +8,7 @@ const Post = ({post}) => {
         navigate(`/posts/${id}`)
     }
     
-    const params = useParams();
+    // const params = useParams();
     // console.log(params)
 
     return (

@@ -1,10 +1,10 @@
 import React from 'react';
-import { useLoaderData, useNavigate, useParams } from 'react-router';
+import { useLoaderData, useNavigate} from 'react-router';
 
 const PostDetails = () => {
     const data = useLoaderData();
     const navigate = useNavigate();
-    const params = useParams();
+    // const params = useParams();
     // console.log(params)
     
     return (
